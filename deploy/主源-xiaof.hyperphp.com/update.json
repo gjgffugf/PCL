@@ -1,0 +1,10 @@
+{
+  "name": "pcl-potato",
+  "latestVersion": "3.0.0",
+  "latestVersionCode": 500,
+  "title": "pcl-potato v3.0.0 已发布",
+  "content": "· 更名为 pcl-potato，软件内名称与关于页同步调整\n· 新增：在线更新检查，支持三个源自动回退，更新内容由服务器下发\n· 恢复：Minecraft 版本下载功能\n· 清理：移除原版的历史更新日志提示",
+  "downloadUrl": "https://xiaof.hyperphp.com/pcl-potato/",
+  "publishDate": "2026-10-22",
+  "forceUpdate": false
+}
