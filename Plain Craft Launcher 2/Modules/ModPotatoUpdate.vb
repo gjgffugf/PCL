@@ -15,7 +15,8 @@ Public Module ModPotatoUpdate
     Public ReadOnly UpdateUrls As String() = {
         "https://xiaof.hyperphp.com/pcl-potato/update.json",
         "https://f.ffurry.cc.cd/pcl-potato/update.json",
-        "https://pcl-potato.xfan.ccwu.cc/update.json"
+        "https://pcl-potato.xfan.ccwu.cc/update.json",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/gjgffugf/pcl-potato/main/update.json"
     }
 
     ''' <summary>

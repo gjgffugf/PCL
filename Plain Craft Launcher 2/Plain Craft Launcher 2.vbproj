@@ -752,6 +752,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icon.ico" />
+    <Resource Include="Images\Splash.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Font.ttf" />

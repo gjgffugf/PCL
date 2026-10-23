@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pcl-potato — Minecraft 启动器</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta name="description" content="pcl-potato 是基于 PCL2 二次开发的 Minecraft 启动器" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img class="hero-logo" src="favicon.png" alt="pcl-potato" />
+      <h1 class="hero-title" id="appName">pcl-potato</h1>
+      <p class="hero-slogan" id="slogan">基于 PCL2 二次开发的 Minecraft 启动器</p>
+      <div class="hero-badges">
+        <span class="badge">版本 <b id="heroVersion">v3.0.0</b></span>
+        <span class="badge" id="heroSize">约 45 MB</span>
+      </div>
+      <div class="download-area">
+        <button id="downloadBtn" class="download-btn soon" disabled>即将发布</button>
+        <div id="sha256" class="sha256"></div>
+        <div id="releaseNote" class="release-note"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="intro">
+        <h2 class="section-title" id="introTitle">什么是 pcl-potato</h2>
+        <p class="section-text" id="introText"></p>
+        <div class="feature-grid" id="featureList"></div>
+      </section>
+
+      <section class="section" id="specs">
+        <h2 class="section-title">版本信息</h2>
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-label">当前版本</div>
+            <div class="spec-value" id="specVersion">3.0.0</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">版本代号</div>
+            <div class="spec-value" id="specCode">500</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">安装包大小</div>
+            <div class="spec-value" id="specSize">约 45 MB</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">更新日期</div>
+            <div class="spec-value" id="specDate">2026-10-23</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">运行依赖</div>
+            <div class="spec-value" id="specFramework">.NET Framework 4.8</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <h2 class="section-title">关于</h2>
+        <p class="section-text">
+          pcl-potato 基于 Plain Craft Launcher 2 二次开发，遵循原项目的分发许可，
+          保留原作者署名与赞助链接。
+        </p>
+        <div class="contributor-list" id="contributorList"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>pcl-potato · 基于 Plain Craft Launcher 2（作者 龙腾猫跃）</p>
+      <p class="footer-sub">Minecraft 是 Mojang Studios 的商标，本站与 Mojang 无隶属关系</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

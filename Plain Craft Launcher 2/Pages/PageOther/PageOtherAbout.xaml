@@ -11,10 +11,10 @@
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,8"
                                 Text="pcl-potato 是基于 Plain Craft Launcher 2（PCL2，作者 龙腾猫跃）二次开发的 Minecraft 启动器，当前版本 v3.0.0。" />
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,10" FontSize="11" Foreground="#FF8C7721"
-                                Text="本版本恢复了 Minecraft 版本下载功能。" />
+                                Text="本版本恢复了 Minecraft 版本下载功能，并改用在线 JSON 下发更新提示（三个源自动回退）。" />
                     <local:MyButton Height="35" Width="220" HorizontalAlignment="Left" Padding="20,0,20,0" ColorType="Highlight"
                                     Text="打开 pcl-potato 官网" ToolTip="https://xiaof.hyperphp.com/pcl-potato/"
-                                    local:CustomEventService.EventType="打开网页(也是官网)" local:CustomEventService.EventData="https://xiaof.hyperphp.com/pcl-potato/" />
+                                    local:CustomEventService.EventType="打开网页" local:CustomEventService.EventData="https://xiaof.hyperphp.com/pcl-potato/" />
                 </StackPanel>
             </local:MyCard>
             <!-- ============================================================
@@ -59,7 +59,7 @@
                         </local:MyImage>
                         <StackPanel>
                             <local:MyListItem Title="帆蓝" Margin="-5,0,0,0" IsHitTestVisible="False"
-                                              Info="pcl-potato 二次开发者：恢复 MC 下载、重写更新逻辑、维护更新服务器" />
+                                              Info="pcl-potato 二次开发者：更名、恢复 MC 下载、重写更新逻辑、维护更新服务器" />
                             <local:MyTextButton Text="打开官网" HorizontalAlignment="Left" FontSize="11" Margin="-2,2,0,0"
                                                 local:CustomEventService.EventType="打开网页"
                                                 local:CustomEventService.EventData="https://xiaof.hyperphp.com/pcl-potato/" />

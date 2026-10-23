@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #f4f7fb;
+  color: #1f2d3d;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero {
+  background: linear-gradient(160deg, #006ae9 0%, #0a4fb8 55%, #0b357f 100%);
+  color: #fff;
+  padding: 56px 20px 48px;
+  text-align: center;
+}
+
+.hero-logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.14);
+  padding: 8px;
+  margin-bottom: 18px;
+}
+
+.hero-title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.hero-slogan {
+  margin-top: 8px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.hero-badges {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  padding: 5px 15px;
+  font-size: 13px;
+}
+
+.badge b {
+  font-weight: 700;
+}
+
+.download-area {
+  margin-top: 28px;
+}
+
+.download-btn {
+  display: inline-block;
+  min-width: 210px;
+  padding: 14px 40px;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+  font-family: inherit;
+}
+
+.download-btn.available {
+  background: #fff;
+  color: #006ae9;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+.download-btn.available:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+}
+
+.download-btn.available:active {
+  transform: translateY(0);
+}
+
+.download-btn.soon {
+  background: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px dashed rgba(255, 255, 255, 0.45);
+  cursor: not-allowed;
+}
+
+.sha256 {
+  margin-top: 16px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 12px;
+  word-break: break-all;
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 8px;
+  padding: 9px 14px;
+  display: inline-block;
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.88);
+  user-select: all;
+}
+
+.release-note {
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: 0.82;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+}
+
+.section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 26px;
+  margin-top: 22px;
+  box-shadow: 0 2px 12px rgba(15, 40, 80, 0.07);
+}
+
+.section-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: #0b357f;
+  margin-bottom: 14px;
+  padding-left: 12px;
+  border-left: 4px solid #006ae9;
+}
+
+.section-text {
+  font-size: 15px;
+  color: #4a5a70;
+  margin-bottom: 20px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.feature {
+  background: #f4f7fb;
+  border-radius: 12px;
+  padding: 18px 16px;
+}
+
+.feature-icon {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.feature-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.feature-desc {
+  font-size: 13px;
+  color: #6b7c93;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.spec-item {
+  background: #f4f7fb;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.spec-label {
+  font-size: 12px;
+  color: #8496ad;
+  margin-bottom: 4px;
+}
+
+.spec-value {
+  font-size: 17px;
+  font-weight: 600;
+  color: #0b357f;
+  word-break: break-all;
+}
+
+.contributor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.contributor {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #f4f7fb;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.contributor-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #dbe6f5;
+}
+
+.contributor-body {
+  min-width: 0;
+}
+
+.contributor-name {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.contributor-role {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 12px;
+  color: #006ae9;
+  background: rgba(0, 106, 233, 0.1);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.contributor-desc {
+  margin-top: 7px;
+  font-size: 13px;
+  color: #6b7c93;
+}
+
+.contributor-link {
+  display: inline-block;
+  margin-top: 7px;
+  font-size: 12px;
+  color: #006ae9;
+  text-decoration: none;
+}
+
+.contributor-link:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 20px 40px;
+  font-size: 13px;
+  color: #8496ad;
+}
+
+.footer-sub {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #9aa9bd;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 18px 36px;
+  }
+  .hero-title {
+    font-size: 27px;
+  }
+  .hero-logo {
+    width: 78px;
+    height: 78px;
+  }
+  .section {
+    padding: 24px 18px;
+  }
+  .download-btn {
+    min-width: 180px;
+    padding: 13px 30px;
+  }
+}
