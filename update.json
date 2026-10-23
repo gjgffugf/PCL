@@ -1,10 +1,10 @@
 {
   "name": "pcl-potato",
-  "latestVersion": "3.0.0",
-  "latestVersionCode": 500,
-  "title": "pcl-potato v3.0.0 已发布",
-  "content": "暂无",
-  "downloadUrl": "https://xiaof.hyperphp.com/pcl-potato/",
+  "latestVersion": "3.0.1",
+  "latestVersionCode": 501,
+  "title": "pcl-potato v3.0.1 已发布",
+  "content": "awa，更新了v3.0.1请重新下载安装",
+  "downloadUrl": "https://v6.gh-proxy.org/https://github.com/yegaoteng/mcserver/releases/download/pcl-potato/pcl-potato3.0.1.exe",
   "publishDate": "2026-10-22",
   "forceUpdate": false
 }

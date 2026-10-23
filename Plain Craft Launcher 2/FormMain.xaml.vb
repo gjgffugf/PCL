@@ -14,7 +14,7 @@ Public Class FormMain
         '全新安装（没有旧版本号）时不提示
         If LastVersion <= 0 Then Return
         '已经用过 3.0.0 或更高版本，就不再提示
-        If LastVersion >= 500 Then Return
+        If LastVersion >= 501 Then Return
         Dim Content As String =
             "· 更名为 pcl-potato，软件内名称与关于页同步调整" & vbCrLf &
             "· 新增：在线更新检查，支持三个源自动回退，更新提示内容由服务器下发" & vbCrLf &
