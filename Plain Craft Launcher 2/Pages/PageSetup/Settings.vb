@@ -2,6 +2,11 @@ Imports System.Security.Cryptography
 
 Public Class Settings
 
+    'pcl-potato 新增的三个设置项（注意：本处为 From { } 集合初始化器，
+    'VB 不允许在隐式续行中插入注释行，所以说明统一写在这里）：
+    '  · PotatoUpdatePromptedCode  记录已弹过更新提示的版本号，避免同一版本反复弹窗
+    '  · PotatoUpdateNotify        是否在启动时获取更新通知（设置 → 系统 → 启动器 的开关）
+    '  · PotatoIntroShown          首次启动的版本说明弹窗是否已显示过（置 False 可再弹一次）
     Public Shared ReadOnly Entries As Dictionary(Of String, Setting) = (New List(Of Setting) From {
         New Setting("Identify", "", Source:=Sources.Registry),
         New Setting("WindowHeight", 550),
@@ -38,7 +43,6 @@ Public Class Settings
         New Setting("SystemSystemUpdate", 3),
         New Setting("SystemSystemActivity", 0),
         New Setting("SystemSystemTelemetry", True, Source:=Sources.Registry),
-        'pcl-potato：记录已经弹过更新提示的版本号，避免同一版本反复弹窗（见 Modules\ModPotatoUpdate.vb）
         New Setting("PotatoUpdatePromptedCode", 0, Source:=Sources.Registry),
         New Setting("CacheDrops", "", Source:=Sources.Registry),
         New Setting("CacheConfig", 0, Source:=Sources.Registry),
@@ -129,9 +133,7 @@ Public Class Settings
         New Setting("ToolUpdateSnapshot", False, Source:=Sources.Registry),
         New Setting("ToolUpdateReleaseLast", "", Source:=Sources.Registry),
         New Setting("ToolUpdateSnapshotLast", "", Source:=Sources.Registry),
-        'pcl-potato：是否在启动时获取更新通知（设置 → 系统 → 启动器 中的「获取更新通知」开关）
         New Setting("PotatoUpdateNotify", True, Source:=Sources.Registry),
-        'pcl-potato：首次启动的版本说明弹窗是否已显示过（置为 False 可让它再弹一次）
         New Setting("PotatoIntroShown", False, Source:=Sources.Registry),
         New Setting("UiLauncherTransparent", 600, OnChanged:=Sub(Value As Integer) If FrmMain IsNot Nothing Then FrmMain.Opacity = Value / 1000 + 0.4), '避免与 PCL1 设置冲突（UiLauncherOpacity）
         New Setting("UiLauncherHue", 180),
