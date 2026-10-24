@@ -14,16 +14,16 @@ Public Class FormMain
         '全新安装（没有旧版本号）时不提示
         If LastVersion <= 0 Then Return
         '已经用过 3.0.0 或更高版本，就不再提示
-        If LastVersion >= 502 Then Return
+        If LastVersion >= 503 Then Return
         Dim Content As String =
-            "· 更名为 pcl-potato，软件内名称与关于页同步调整" & vbCrLf &
-            "· 新增：在线更新检查，支持三个源自动回退，更新提示内容由服务器下发" & vbCrLf &
+            "· 更名为 pcl-potato，
+            "· 新增：全新服务器更新下发
             "· 恢复：Minecraft 版本下载功能" & vbCrLf &
             "· 清理：移除原版的历史更新日志提示"
         RunInNewThread(
         Sub()
             '点「前往官网」会打开 https://xiaof.hyperphp.com/pcl-potato/
-            If MyMsgBox(Content, "pcl-potato 已更新至 v3.0.0", "前往官网", "确定") = 1 Then
+            If MyMsgBox(Content, "pcl-potato 已更新至 v3.0.3", "前往官网", "确定") = 1 Then
                 OpenWebsite(OfficialSiteUrl)
             End If
         End Sub, "UpdateLog Output")
@@ -220,11 +220,11 @@ Public Class FormMain
             If Not Settings.Get(Of Boolean)("PotatoIntroShown") Then
                 Settings.Set("PotatoIntroShown", True)
                 MyMsgBox(
-                    "欢迎使用 pcl-potato v3.0.0！" & vbCrLf & vbCrLf &
+                    "欢迎使用 pcl-potato v3.0.3！" & vbCrLf & vbCrLf &
                     "本版本基于 PCL2 二次开发，做了以下调整：" & vbCrLf &
                     "· 恢复了 Minecraft 版本下载功能" & vbCrLf &
                     "· 取消了全部主题解锁限制，15 个主题均可直接使用" & vbCrLf &
-                    "· 更新提示改为在线获取，支持三个服务器自动回退" & vbCrLf & vbCrLf &
+                    "· 更新改为我代理服务器" & vbCrLf & vbCrLf &
                     "官网：https://xiaof.hyperphp.com/pcl-potato/", "pcl-potato")
             End If
         End Sub, "初始化", ThreadPriority.Lowest)

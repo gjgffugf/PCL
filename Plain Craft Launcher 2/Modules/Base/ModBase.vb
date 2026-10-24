@@ -6,12 +6,12 @@ Public Module ModBase
 #Region "声明"
 
     '下列版本信息由更新器自动修改
-    Public Const VersionBaseName As String = "3.0.2" '显示用版本名（pcl-potato v3.0.0）
+    Public Const VersionBaseName As String = "3.0.3" '显示用版本名（pcl-potato v3.0.0）
     Public Const CommitHash As String = "" 'Commit Hash，由 GitHub Workflow 自动替换
 #If RELEASE Then
-    Public Const VersionCode As Integer = 502 '正式版（pcl-potato 3.0.0，须大于原版 413 才不会触发降级逻辑）
+    Public Const VersionCode As Integer = 503 '正式版（pcl-potato 3.0.0，须大于原版 413 才不会触发降级逻辑）
 #Else
-    Public Const VersionCode As Integer = 503 '快照版（pcl-potato 3.0.0）
+    Public Const VersionCode As Integer = 504 '快照版（pcl-potato 3.0.0）
 #End If
 
     '版本信息

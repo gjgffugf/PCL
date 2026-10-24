@@ -69,10 +69,69 @@ Friend Module ModSecret
     Public ColorHue As Integer = 210, ColorSat As Integer = 85, ColorLightAdjust As Integer = 0, ColorHueTopbarDelta As OneOf(Of Integer, Integer()) = 0
     Public ThemeDontClick As Integer = 0
 
+    'pcl-potato 主题色值表
+    '原版中「主题 Id → 色相 / 饱和度」的映射位于被剔除的保密代码里，开源版 ThemeCheckAll
+    '是空壳，导致 ColorHue 永远是初始值 210，切换任何主题界面都不变色。
+    '这里按赞助版各主题的实际颜色补齐，改色只需动下面的数字：
+    '   Hue   色相 0-360（0 红 / 60 黄 / 120 绿 / 180 青 / 240 蓝 / 300 紫）
+    '   Sat   饱和度 0-100（0 为灰度）
+    '   Delta 顶部渐变条的色相跨度（整数 = 左右对称偏移；数组 = 左中右三个偏移）
+    '   Light 亮度偏移 -20 到 +20
+    Private Sub ThemeApplyPreset()
+        Dim Id As Integer = If(ThemeNow >= 0, ThemeNow, 0)
+
+        '14 自定义：取个性化页四个滑块的值
+        If Id = 14 Then
+            ColorHue = Settings.Get(Of Integer)("UiLauncherHue")
+            ColorSat = Settings.Get(Of Integer)("UiLauncherSat")
+            ColorHueTopbarDelta = Settings.Get(Of Integer)("UiLauncherDelta") - 90
+            ColorLightAdjust = Settings.Get(Of Integer)("UiLauncherLight") - 20
+            Return
+        End If
+        '12 滑稽彩：彩虹流动，由 TimerMain 每 250ms 调用 ThemeRefresh 刷新
+        If Id = 12 Then
+            ColorHue = (Environment.TickCount \ 20) Mod 360
+            ColorSat = 85
+            ColorHueTopbarDelta = 60
+            ColorLightAdjust = 0
+            Return
+        End If
+        '13 欧皇彩：顶部渐变条左中右三色
+        If Id = 13 Then
+            ColorHue = 45
+            ColorSat = 90
+            ColorHueTopbarDelta = New Integer() {-45, 0, 45}
+            ColorLightAdjust = 0
+            Return
+        End If
+
+        Dim Hue As Integer = 210, Sat As Integer = 85, Delta As Integer = 30, Light As Integer = 0
+        Select Case Id
+            Case 0 : Hue = 210 : Sat = 85 : Delta = 30 : Light = 0    '龙猫蓝
+            Case 1 : Hue = 168 : Sat = 70 : Delta = 25 : Light = 0    '甜柠青
+            Case 2 : Hue = 120 : Sat = 55 : Delta = 25 : Light = 0    '小草绿
+            Case 3 : Hue = 48 : Sat = 85 : Delta = 20 : Light = 0     '菠萝黄
+            Case 4 : Hue = 28 : Sat = 45 : Delta = 15 : Light = -2    '橡木棕
+            Case 5 : Hue = 210 : Sat = 6 : Delta = 0 : Light = -12    '玄素黑（灰色是个谎言）
+            Case 6 : Hue = 335 : Sat = 75 : Delta = 25 : Light = 0    '铁杆粉
+            Case 7 : Hue = 280 : Sat = 65 : Delta = 25 : Light = 0    '神秘紫
+            Case 8 : Hue = 40 : Sat = 80 : Delta = 20 : Light = 0     '秋仪金
+            Case 9 : Hue = 24 : Sat = 90 : Delta = 20 : Light = 0     '活跃橙
+            Case 10 : Hue = 0 : Sat = 80 : Delta = 20 : Light = 0     '跳票红
+            Case 11 : Hue = 220 : Sat = 90 : Delta = 35 : Light = -5  '极客蓝
+        End Select
+        ColorHue = Hue
+        ColorSat = Sat
+        ColorHueTopbarDelta = Delta
+        ColorLightAdjust = Light
+    End Sub
+
     Public Sub ThemeRefresh(Optional NewTheme As Integer = -1)
         Try
             If ThemeNow = NewTheme AndAlso NewTheme >= 0 Then Return
             If NewTheme >= 0 Then ThemeNow = NewTheme
+
+            ThemeApplyPreset()
 
             Color1 = New MyColor().FromHSL2(ColorHue, ColorSat * 0.2, 25 + ColorLightAdjust * 0.3)
             Color2 = New MyColor().FromHSL2(ColorHue, ColorSat, 45 + ColorLightAdjust)

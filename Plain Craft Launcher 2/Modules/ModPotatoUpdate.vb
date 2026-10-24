@@ -16,7 +16,7 @@ Public Module ModPotatoUpdate
         "https://xiaof.hyperphp.com/pcl-potato/update.json",
         "https://f.ffurry.cc.cd/pcl-potato/update.json",
         "https://pcl-potato.xfan.ccwu.cc/update.json",
-        "https://gh-proxy.com/https://raw.githubusercontent.com/gjgffugf/pcl/main/update.json"
+        "https://gh-proxy.com/https://raw.githubusercontent.com/gjgffugf/update/main/pclupdate.json"
     }
 
     ''' <summary>
