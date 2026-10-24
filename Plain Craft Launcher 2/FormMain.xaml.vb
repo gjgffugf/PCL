@@ -16,14 +16,14 @@ Public Class FormMain
         '已经用过 3.0.0 或更高版本，就不再提示
         If LastVersion >= 503 Then Return
         Dim Content As String =
-            "· 更名为 pcl-potato，
-            "· 新增：全新服务器更新下发
+            "· 更名为 pcl-potato" & vbCrLf &
+            "· 新增：全新服务器更新下发" & vbCrLf &
             "· 恢复：Minecraft 版本下载功能" & vbCrLf &
             "· 清理：移除原版的历史更新日志提示"
         RunInNewThread(
         Sub()
             '点「前往官网」会打开 https://xiaof.hyperphp.com/pcl-potato/
-            If MyMsgBox(Content, "pcl-potato 已更新至 v3.0.3", "前往官网", "确定") = 1 Then
+            If MyMsgBox(Content, $"pcl-potato 已更新至 v{VersionBaseName}", "前往官网", "确定") = 1 Then
                 OpenWebsite(OfficialSiteUrl)
             End If
         End Sub, "UpdateLog Output")
